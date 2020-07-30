@@ -1,5 +1,4 @@
-@import "./variables";
-@import "./globals";
+@import "./imports";
 
 /* 
 =================
@@ -177,8 +176,6 @@ About
 */
 .about-section {
   background-color: $white;
-  padding: 1rem;
-  padding-bottom: 4rem;
 
   .about-content {
     width: 95%;
@@ -189,14 +186,8 @@ About
       padding-bottom: 1rem;
     }
     h3 {
-      letter-spacing: $spacing;
-      text-transform: capitalize;
+      @include format-text;
       padding: 0.5rem 0;
-    }
-    p {
-      padding: 0.5rem 0;
-      opacity: 0.7;
-      font-size: 14px;
     }
   }
 }
@@ -241,7 +232,6 @@ About
             border: 8px solid $primary-color;
             width: 100%;
             height: 95%;
-
             position: absolute;
             top: -25px;
             left: -25px;
@@ -256,5 +246,99 @@ About
 /* 
 =================
 Services
+=================
+*/
+.services-section {
+  background-color: $grey;
+
+  .services-content {
+    text-align: center;
+
+    .services-item {
+      max-width: 19.5rem;
+      margin: 0 auto;
+
+      .services-icon {
+        background-color: $primary-color;
+        width: 3.5rem;
+        margin: 1rem auto;
+        padding: 1rem 0.75rem;
+        max-height: 3.8rem;
+
+        i {
+          opacity: 0.6;
+        }
+      }
+      .services-name {
+        @include format-text;
+        font-size: 0.9rem;
+        padding: 0.5rem 0;
+      }
+      p {
+        padding-bottom: 2rem;
+      }
+    }
+  }
+}
+@media (min-width: 576px) {
+  body {
+    .services-section {
+      .services-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        .services-item {
+          flex: 0 0 calc(50% - 2rem);
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  body {
+    .services-section {
+      .services-content {
+        .services-item {
+          flex: 0 0 calc(33.33% - 2rem);
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1170px) {
+  body {
+    .services-section {
+      .services-content {
+        .services-item {
+          // flex: 0 0 calc(33.33% - 2rem);
+          // margin: 0;
+          display: flex;
+          text-align: left;
+
+          .services-text {
+            padding-left: 1.2rem;
+
+            .services-name {
+              font-size: 1rem;
+              padding-bottom: 0.25rem;
+              margin-top: 0.25rem;
+            }
+            p {
+              width: 18rem;
+              padding-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 
+=================
+Tours
 =================
 */
