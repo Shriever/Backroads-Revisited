@@ -342,3 +342,255 @@ Services
 Tours
 =================
 */
+.tours-section {
+  margin: 0 0.25rem;
+  .tour-card {
+    margin: 2rem auto;
+    background-color: $grey;
+    box-shadow: $light-shadow;
+    transition: $transition;
+    max-height: 475px;
+
+    &:hover {
+      box-shadow: $dark-shadow;
+      transform: scale(1.02);
+    }
+    .tour-img {
+      position: relative;
+
+      p {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 0.25rem;
+        background-color: lighten($primary-color, 10%);
+        text-transform: capitalize;
+        transform: translateY(-3px);
+      }
+    }
+    .tour-info {
+      padding: 1.5rem;
+      .tour-name {
+        @include format-text;
+        font-size: 0.9rem;
+        padding-bottom: 0.75rem;
+      }
+      .tour-details {
+        display: flex;
+        justify-content: space-between;
+        color: $primary-color;
+        text-transform: capitalize;
+        padding: 0.5rem 0;
+      }
+    }
+  }
+  .tour-btn {
+    margin: 0 auto;
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    .tour-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+
+      .tour-card {
+        flex: 0 0 calc(50% - 2rem);
+      }
+    }
+  }
+}
+@media (min-width: 1168px) {
+  body {
+    .tour-container {
+      .tour-card {
+        flex: 0 0 calc(33.33% - 3rem);
+        margin: 1.25rem 0;
+      }
+    }
+  }
+}
+
+/* 
+=================
+Form
+=================
+*/
+.form-section {
+  background-color: $primary-color;
+  padding: 5rem 2rem;
+  .form-text {
+    h3 {
+      color: #fff;
+      text-transform: capitalize;
+      @include format-text;
+    }
+    p {
+      color: lighten($light-color, 20%);
+      font-size: 14px;
+      padding-top: 1rem;
+    }
+  }
+  .form-input {
+    input {
+      text-transform: capitalize;
+      padding: 0.5rem 0.25rem;
+      font-size: 16px;
+      letter-spacing: $spacing;
+      color: $primary-color;
+      width: 66%;
+      height: 39px;
+    }
+    button {
+      background-color: $light-color;
+      color: $dark-color;
+      text-transform: capitalize;
+      font-size: 1rem;
+      padding-top: 8px;
+
+      &:hover {
+        background-color: $dark-color;
+        color: $primary-color;
+      }
+    }
+  }
+}
+@media (min-width: 800px) {
+  body {
+    .form-section {
+      .form-text {
+        h3 {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  body {
+    .form-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+
+      .form-input {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0.5rem;
+        flex-grow: 1;
+        input {
+          flex: 1 0 66%;
+        }
+        button {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+/* 
+=================
+Gallery
+=================
+*/
+.gallery-section {
+  .gallery-img {
+    position: relative;
+    background-color: $primary-color;
+    margin: 0;
+    &:hover img {
+      opacity: 0.5;
+    }
+    &:hover a {
+      display: block;
+    }
+
+    img {
+      transition: $transition;
+      display: block;
+    }
+
+    a {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: $white;
+      display: none;
+    }
+  }
+}
+@media (min-width: 768px) {
+  body {
+    .gallery-section {
+      display: flex;
+      flex-wrap: wrap;
+      .gallery-img {
+        flex: 0 0 50%;
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  body {
+    .gallery-section {
+      .gallery-img {
+        flex: 0 0 25%;
+      }
+    }
+  }
+}
+/* 
+=================
+Footer
+=================
+*/
+.footer {
+  background-color: darken($dark-color, 9%);
+  padding: 4rem 2rem 6rem;
+  color: $white;
+  .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .footer-links {
+    text-transform: capitalize;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: $spacing;
+    transition: $transition;
+
+    .footer-link {
+      transition: $transition;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+  .footer-icons {
+    text-align: center;
+    padding: 2rem 0;
+    .footer-icon {
+      padding: 1rem 0.25rem;
+      transition: $transition;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+  .footer-text {
+    text-align: center;
+    letter-spacing: $spacing;
+    font-size: 15px;
+  }
+}
