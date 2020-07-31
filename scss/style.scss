@@ -5,6 +5,41 @@
 Navbar
 =================
 */
+@media (max-width: 919px) {
+  body {
+    .navbar {
+      .nav-container {
+        .nav-links {
+          position: fixed;
+          top: 8%;
+          left: 0;
+          width: 100%;
+          height: 0;
+          overflow: hidden;
+          transition: $transition;
+
+          .nav-link {
+            background-color: $white;
+            padding: 1rem 2rem;
+            cursor: pointer;
+            display: block;
+
+            &:hover {
+              /* 256px */
+              background-color: lighten($light-color, 17%);
+              color: #111;
+              padding-left: 2.25rem;
+            }
+          }
+        }
+        .show-links {
+          height: 256px !important;
+        }
+      }
+    }
+  }
+}
+
 .navbar {
   background: $white;
   box-shadow: $light-shadow;
@@ -24,7 +59,7 @@ Navbar
       max-width: 180px;
     }
     .nav-links {
-      display: none;
+      display: block;
       justify-content: space-between;
       // flex: 0 0 auto;
 
@@ -35,7 +70,7 @@ Navbar
         letter-spacing: $spacing;
         font-family: $font-stack;
         transition: $transition;
-        opacity: 0.9;
+        // opacity: 0.9;
 
         &:hover {
           color: $primary-color;
@@ -349,7 +384,7 @@ Tours
     background-color: $grey;
     box-shadow: $light-shadow;
     transition: $transition;
-    max-height: 475px;
+    max-height: 495px;
 
     &:hover {
       box-shadow: $dark-shadow;
@@ -400,6 +435,7 @@ Tours
 
       .tour-card {
         flex: 0 0 calc(50% - 2rem);
+        max-height: 475px;
       }
     }
   }
